@@ -1,0 +1,15 @@
+<html>
+<head>
+    <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<table>
+    <h3>All notes</h3>
+    <% for(var i=0; i < NOTES.length; i++) { %>
+    <tr>
+        <td><a href="/single-note/<%= NOTES[i].id %>"><%= NOTES[i].note_title %></a></td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
