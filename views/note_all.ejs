@@ -3,11 +3,27 @@
     <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+
+    <form action="/date-wise-note" method="POST">
+        <label>First Date</label><input type="date" name="first_date">
+        <br/>
+
+        <label for="">Second Date</label><input type="date" name="second_date">
+        <br/>
+        <input type="submit" value="Submit">
+    </form>
+
+    <% if(locals.Date_Range){ %>
+<h5>Date Range is : <%= Date_Range%></h5>
+<% } %>
+
+
 <table>
     <h3>All notes</h3>
     <% for(var i=0; i < NOTES.length; i++) { %>
     <tr>
         <td><a href="/single-note/<%= NOTES[i].id %>"><%= NOTES[i].note_title %></a></td>
+        <td><%= NOTES[i].note_date %></td>
     </tr>
     <% } %>
 </table>
